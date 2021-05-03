@@ -1,15 +1,14 @@
 # Finding the reach of a post
 
 ### Задача была решена в рамках 24 часового хакатона.
-![image](https://drive.google.com/file/d/1i5LzBHoOvaFzxVtaQMsuHw2K3XMk2NUr/view)
+#### Задача: Необходимо спрогнозировать потенциальный охват (количество просмотров) публикаций в двух-трех соцсетях, опираясь на собранную статистику (данные предоставляются) и используя машинное обучение.
 
 ### В качестве формулы охвта используется следующее выражение:
-![image](https://drive.google.com/file/d/19p91hvYCVZnrk0fXgW8gMEiwaOdgMrB1/view)
-
+<img src="https://latex.codecogs.com/gif.latex?O= \frac{likes\cdot 0.3 + comments\cdot 0.3+reposts\cdot 0.3+views\cdot 0.1}{\frac{1}{4}\cdot (likes+ comments+reposts+views))}  " />
 ### Основой модели был выбран Берт, выдававший вектроное представление предложения.
-![image](https://drive.google.com/file/d/1XsX4_Ak3HT_D60dTpP3j0SgmFSGTyUhq/view)
+![image](https://habrastorage.org/webt/oq/nf/ip/oqnfip8zglclubfblimrqvwrdz8.png)
 ### На этой основе была располжена лстм, которая в зависимости от подаваемого токена дня недели возвращала выход и полученное скрытое представление.
-![image](https://drive.google.com/file/d/1aEtqUBHLLSeRn4-UanGRugTUocrCmZhM/view)
+![image](https://habrastorage.org/web/67b/04f/73b/67b04f73b4c34ba38edfa207e09de07c.png)
 ### Последним уровнем модели были обычные полносвязные линейные слои с активацией ReLU и Dropout.
 
 ### Исходные данные были проанализированны, почищенны от неинформативных примеров, отнормированны и разелены на train/test. Более подробно можно увидеть в ноутбуке.
